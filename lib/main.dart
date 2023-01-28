@@ -99,7 +99,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 const Text('Does not have account?'),
                 TextButton(
                   child: const Text(
-                    'Sign in',
+                    'Sign up',
                     style: TextStyle(fontSize: 20),
                   ),
                   onPressed: () {
