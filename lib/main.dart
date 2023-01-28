@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon/tutorial.dart';
 
 void main() => runApp(const MyApp());
 
@@ -89,12 +90,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 child: ElevatedButton(
                   child: const Text('Login'),
                   onPressed: () {
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>TutorialPage()));
                     print(nameController.text);
                     print(passwordController.text);
                   },
                 )
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 const Text('Does not have account?'),
                 TextButton(
@@ -103,11 +106,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     style: TextStyle(fontSize: 20),
                   ),
                   onPressed: () {
+
                     //signup screen
                   },
                 )
               ],
-              mainAxisAlignment: MainAxisAlignment.center,
             ),
           ],
         ));
