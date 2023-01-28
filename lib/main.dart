@@ -96,6 +96,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   },
                 )
             ),
+            Container(
+              child: Image(
+                image:
+                  AssetImage('assets/1.jpg'),
+
+              )
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
