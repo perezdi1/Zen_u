@@ -41,23 +41,24 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         child: ListView(
           children: <Widget>[
             Container(
-                alignment: Alignment.center,
+                alignment: Alignment.bottomCenter,
                 padding: const EdgeInsets.all(10),
                 child: const Text(
                   'Zen-You',
                   style: TextStyle(
                       color: Colors.purple,
                       fontWeight: FontWeight.w500,
-                      fontSize: 30),
+                      fontSize: 70),
                 )),
             Container(
-                alignment: Alignment.center,
+                alignment: Alignment.bottomCenter,
                 padding: const EdgeInsets.all(10),
                 child: const Text(
                   'Sign in',
                   style: TextStyle(fontSize: 20),
                 )),
             Container(
+              alignment: Alignment.bottomCenter,
               padding: const EdgeInsets.all(10),
               child: TextField(
                 controller: nameController,
@@ -68,6 +69,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               ),
             ),
             Container(
+              alignment: Alignment.bottomCenter,
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: TextField(
                 obscureText: true,
@@ -85,6 +87,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               child: const Text('Forgot Password',),
             ),
             Container(
+              alignment: Alignment.bottomCenter,
                 height: 50,
                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                 child: ElevatedButton(
@@ -97,9 +100,12 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 )
             ),
             Container(
+              alignment: Alignment.topCenter,
               child: Image(
                 image:
-                  AssetImage('assets/1.jpg'),
+                  AssetImage('assets/Picture1.jpg'),
+                width: 500,
+                height: 500,
 
               )
             ),
