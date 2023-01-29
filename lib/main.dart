@@ -16,20 +16,111 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.brown[300],
         appBar: AppBar(title: const Text(_title)),
         body: const MyStatefulWidget(),
+
+      ),
+        home: const Scaffold(
+          body: QuestionWidget(),
       ),
     );
   }
 }
 
-
+class QuestionWidget extends StatefulWidget {
+  const QuestionWidget({
+    key? key,
+}) : super(key:key);
+  @override
+  State<QuestionWidget> createState
+}
 
 
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({Key? key}) : super(key: key);
-
   @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+  State<MyStatefulWidget> createState() => _MyQuestionWidgetState();
 }
+
+class _MyQuestionWidgetState extends State<QuestionWidget>{
+  int _question_num = 1
+  @override
+  Widget build(BuildContext context) {
+    return Padding(padding: const Edgeinsets.symmetric(horizontal: 16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          const SizedBox(height: 16),
+          Text('Question $_question_num/$ {Question.length}'),
+          const Divider(thickness: 1, color: Colors.brown)
+          Expanded(
+            child: PageView.builder(
+                itemCount: questions.length,
+                physics: const NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  final _question = questions[index];
+                  return buildQuestion(_question);
+                }
+            ),
+          ),
+          const SizedBox(height: 20),
+        ],
+      ),
+    );
+  }
+    Column buildQuestion(Question _question) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 32),
+          Text(
+            question.text,
+            style: const TextStyle(fontSize: 25),
+          )
+          const SizedBox(height: 32),
+          Expanded(
+            child: OptionWidget(
+              question: question,
+            ),
+
+          )
+
+        ],
+      );
+  }
+}
+
+class OptionsWidget extends StatelessWidget {
+  final Question question({
+    Key? key,
+    require this.question,
+}) : super(key: key)
+
+@override
+Widget build(BuildContext context) => SingleChildScrollView(
+        child: Column(
+            children: question.options
+                    .map((option) => buildOption(context,option))
+                    .list(),
+  ),
+};
+
+  Widget buildOption(BuildContext context, Option option) {
+    return Container(
+    height: 50,
+    decoration: BoxDecoration,
+    color: Colors.brown:
+    )
+      return Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                option.text,
+                style: const TextStyle(fontsize: 20 )
+    ),
+  ]
+
+
+);
+
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   TextEditingController nameController = TextEditingController();
@@ -128,5 +219,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ),
           ],
         ));
-  }
-}
+    }
+  };
+};
