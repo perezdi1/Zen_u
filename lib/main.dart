@@ -16,114 +16,20 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.brown[300],
         appBar: AppBar(title: const Text(_title)),
         body: const MyStatefulWidget(),
-
-      ),
-        home: const Scaffold(
-          body: QuestionWidget(),
       ),
     );
   }
 }
 
-class QuestionWidget extends StatefulWidget {
-  const QuestionWidget({
-    Key? key,
-}) : super(key:key);
-  @override
-  State<QuestionWidget> createState() => _MyQuestionWidgetState()
-}
+
 
 
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({Key? key}) : super(key: key);
+
   @override
-  State<MyStatefulWidget> createState() => _MyQuestionWidgetState();
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
-
-class _MyQuestionWidgetState extends State<QuestionWidget>{
-  int _question_num = 1
-  @override
-  Widget build(BuildContext contex  t) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          const SizedBox(height: 16),
-          Text('Question $_question_num/${questions.length}'),
-          const Divider(thickness: 1, color: Colors.brown),
-          Expanded(
-            child: PageView.builder(
-                itemCount: questions.length,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  final Question = questions[index];
-                  return buildQuestion(_question);
-                }
-            ),
-          ),
-          const SizedBox(height: 20),
-        ],
-      ),
-    );
-  }
-    Column buildQuestion(Question questions) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 32),
-          Text(
-            Question.text,
-            style: const TextStyle(fontSize: 25),
-          )
-          const SizedBox(height: 32),
-          Expanded(
-            child: OptionsWidget(
-              Question: Question,
-            ),
-
-          )
-
-        ],
-      );
-  }
-}
-
-class OptionsWidget extends StatelessWidget {
-  final Question Question;
-
-  const OptionsWidget({
-    Key? key,
-    require this.question,
-}) : super(key: key);
-
-@override
-Widget build(BuildContext context) => SingleChildScrollView(
-        child: Column(
-            children: Question.options
-                    .map((option) => buildOption(context,option))
-                    .tolist(),
-  ),
-};
-
-Widget buildOption(BuildContext context, Option option) {
-  return Container(
-      height: 50,
-      decoration: BoxDecoration,(
-          color: Colors.brown:
-      ),
-        child:  Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-              Text(
-                  option.text,
-                  style: const TextStyle(fontsize: 20 )
-      ),
-    ]
-
-
-  );
-
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   TextEditingController nameController = TextEditingController();
@@ -182,7 +88,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               child: const Text('Forgot Password',),
             ),
             Container(
-              alignment: Alignment.bottomCenter,
+                alignment: Alignment.bottomCenter,
                 height: 50,
                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                 child: ElevatedButton(
@@ -195,14 +101,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 )
             ),
             Container(
-              alignment: Alignment.topCenter,
-              child: Image(
-                image:
+                alignment: Alignment.topCenter,
+                child: const Image(
+                  image:
                   AssetImage('assets/Picture1.jpg'),
-                width: 500,
-                height: 500,
+                  width: 500,
+                  height: 500,
 
-              )
+                )
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -222,6 +128,5 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ),
           ],
         ));
-    }
-  };
-
+  }
+}

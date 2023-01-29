@@ -36,7 +36,7 @@ class TutorialPage extends StatefulWidget {
                 Navigator.push(context,MaterialPageRoute(builder: (context)=>QuestionnairePage()));
               },
             )
-            )
+            ),
       ]
       ));
 
