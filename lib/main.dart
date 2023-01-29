@@ -27,10 +27,10 @@ class MyApp extends StatelessWidget {
 
 class QuestionWidget extends StatefulWidget {
   const QuestionWidget({
-    key? key,
+    Key? key,
 }) : super(key:key);
   @override
-  State<QuestionWidget> createState
+  State<QuestionWidget> createState() => _MyQuestionWidgetState()
 }
 
 
@@ -43,20 +43,21 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyQuestionWidgetState extends State<QuestionWidget>{
   int _question_num = 1
   @override
-  Widget build(BuildContext context) {
-    return Padding(padding: const Edgeinsets.symmetric(horizontal: 16.0),
+  Widget build(BuildContext contex  t) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           const SizedBox(height: 16),
-          Text('Question $_question_num/$ {Question.length}'),
-          const Divider(thickness: 1, color: Colors.brown)
+          Text('Question $_question_num/${questions.length}'),
+          const Divider(thickness: 1, color: Colors.brown),
           Expanded(
             child: PageView.builder(
                 itemCount: questions.length,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
-                  final _question = questions[index];
+                  final Question = questions[index];
                   return buildQuestion(_question);
                 }
             ),
@@ -66,19 +67,19 @@ class _MyQuestionWidgetState extends State<QuestionWidget>{
       ),
     );
   }
-    Column buildQuestion(Question _question) {
+    Column buildQuestion(Question questions) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 32),
           Text(
-            question.text,
+            Question.text,
             style: const TextStyle(fontSize: 25),
           )
           const SizedBox(height: 32),
           Expanded(
-            child: OptionWidget(
-              question: question,
+            child: OptionsWidget(
+              Question: Question,
             ),
 
           )
@@ -89,37 +90,39 @@ class _MyQuestionWidgetState extends State<QuestionWidget>{
 }
 
 class OptionsWidget extends StatelessWidget {
-  final Question question({
+  final Question Question;
+
+  const OptionsWidget({
     Key? key,
     require this.question,
-}) : super(key: key)
+}) : super(key: key);
 
 @override
 Widget build(BuildContext context) => SingleChildScrollView(
         child: Column(
-            children: question.options
+            children: Question.options
                     .map((option) => buildOption(context,option))
-                    .list(),
+                    .tolist(),
   ),
 };
 
-  Widget buildOption(BuildContext context, Option option) {
-    return Container(
-    height: 50,
-    decoration: BoxDecoration,
-    color: Colors.brown:
-    )
-      return Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+Widget buildOption(BuildContext context, Option option) {
+  return Container(
+      height: 50,
+      decoration: BoxDecoration,(
+          color: Colors.brown:
+      ),
+        child:  Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
               Text(
-                option.text,
-                style: const TextStyle(fontsize: 20 )
-    ),
-  ]
+                  option.text,
+                  style: const TextStyle(fontsize: 20 )
+      ),
+    ]
 
 
-);
+  );
 
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
@@ -221,4 +224,4 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         ));
     }
   };
-};
+
