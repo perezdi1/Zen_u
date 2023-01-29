@@ -41,6 +41,8 @@ class TutorialPage extends StatefulWidget {
                   child: const Image(
                     image:
                     AssetImage('assets/Bear.jpg'),
+                    width: 500,
+                    height: 500,
 
       )
             )
