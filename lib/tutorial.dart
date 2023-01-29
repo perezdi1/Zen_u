@@ -23,7 +23,6 @@ class TutorialPage extends StatefulWidget {
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(fontWeight: FontWeight.bold),
-
             ),
           )
           ),
@@ -37,6 +36,15 @@ class TutorialPage extends StatefulWidget {
               },
             )
             ),
+            Container(
+                  alignment: Alignment.topCenter,
+                  child: const Image(
+                    image:
+                    AssetImage('assets/Bear.jpg'),
+
+      )
+            )
+
       ]
       ));
 
