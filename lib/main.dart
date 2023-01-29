@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: _title,
       home: Scaffold(
+        backgroundColor: Colors.brown[300],
         appBar: AppBar(title: const Text(_title)),
         body: const MyStatefulWidget(),
       ),
