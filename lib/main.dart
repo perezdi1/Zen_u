@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon/tutorial.dart';
+import 'package:hackathon/main.page.dart';
+
 
 void main() => runApp(const MyApp());
 
@@ -7,6 +9,7 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   static const String _title = 'Zen-You';
+  print(questions)
 
   @override
   Widget build(BuildContext context) {

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon/main.dart';
+import 'package:hackathon/questionare.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
+class mainpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

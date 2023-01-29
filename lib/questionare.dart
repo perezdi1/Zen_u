@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon/main.page.dart';
 
 
 class QuestionnairePage extends StatelessWidget {
@@ -16,7 +17,7 @@ class QuestionnairePage extends StatelessWidget {
               child: ElevatedButton(
                 child: const Text('next'),
                 onPressed: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>QuestionnairePage()));
+                 Navigator.push(context.MaterialPageRoute(builder: (context)=>QuestionnairePage()));
                 },
               )
           ),
