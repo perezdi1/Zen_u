@@ -44,8 +44,18 @@ class TutorialPage extends StatefulWidget {
                     width: 500,
                     height: 500,
 
-      )
-            )
+      ),
+            ),
+            Container(
+              alignment: Alignment.topCenter,
+              padding: const EdgeInsets.all(10),
+              child: const Text(
+                'Welcome to Zen-u!! I welcome you to a safe haven for those who can be themselves and at Zen-u you will get to me your personal Koala who can make you feel comfortable and better all around!!!',
+                style: TextStyle(
+                    color: Colors.purple,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 25),
+              )),
 
       ]
       ));

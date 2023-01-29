@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 
-
 class QuestionnairePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -21,6 +20,16 @@ class QuestionnairePage extends StatelessWidget {
                 },
               )
           ),
+          Column(
+            children: [
+              for(var question in questions)
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(question.text),
+                ),
+            ],
+          )
+
         ],
       ),
     );
