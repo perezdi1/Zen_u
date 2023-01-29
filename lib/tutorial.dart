@@ -19,7 +19,7 @@ class TutorialPage extends StatefulWidget {
           const Card(
             child: Padding(
               padding: EdgeInsets.all(16.0),
-              child: Text('Hello World!',
+              child: Text('Welcome to Zen-U!',
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(fontWeight: FontWeight.bold),
