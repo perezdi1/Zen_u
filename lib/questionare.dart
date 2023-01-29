@@ -1,8 +1,8 @@
 class Question {
   final String text;
   final List<Option> options;
-  bool isLocked
-  Option? selected options;
+  bool isLocked;
+  Option? selectedOption;
 
   Question({
     required this.text,
@@ -21,7 +21,7 @@ class Option {
 });
 }
 
-Final questions = [
+final questions = [
   Question(text: 'How often have you been?',
     options: [const Option(text: '1 Time',correct: true),
       const Option(text: '2 Times', correct: true),
@@ -41,11 +41,15 @@ options: [const Option(text: 'Yes', correct: true),
 const Option(text: 'No', correct: true)]
 
 ),
-Question(text: 'Have you felt like yourself or have you noticed signs in a decrease of self worthiness?',
+Question(text: 'Have you not felt like your self or have you noticed signs in a decrease of self worthiness?',
 options: [const Option(text: 'Yes',correct: true),
 const Option(text: 'No', correct: true)
 ]),
-Question(text: 'Does stress')
+
+Question(text: 'Has stress been heavily affecting you even on a daily basis?',
+options: [const Option(text: 'Yes', correct: true),
+const Option(text: 'No', correct: true)]
+)];
 
   
 
